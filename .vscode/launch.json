@@ -1,0 +1,21 @@
+{
+    "configurations": [
+    {
+        "type": "java",
+        "name": "Attach to Remote Program",
+        "request": "attach",
+        "hostName": "0.0.0.0",
+        "port": 5005
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-DemoApplication<demo>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.example.demo.DemoApplication",
+      "projectName": "demo",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+    }
+    ]
+}

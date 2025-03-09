@@ -1,0 +1,16 @@
+services:
+  demo:
+    image: playlist-java
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+      - "5005:5005"
+    volumes:
+      - ~/.m2:/root/.m2  # Maven のキャッシュを共有
+      - ./src:/app/src  # ソースコードのみマウント
+      - ./target:/app/target  # `target` フォルダもマウント
+    tty: true
+    restart: always
+    command: ["sh", "/app/entrypoint.sh"]
