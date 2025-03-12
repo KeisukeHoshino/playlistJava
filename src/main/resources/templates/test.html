@@ -3,22 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.skypack.dev/sanitize.css">
+    <link rel="stylesheet" href="https://cdn.skypack.dev/sanitize.css" />
     <link rel="stylesheet" href="app.css" />
     <title>test Page</title>
   </head>
 
   <body>
     <h2>ポケモン一覧</h2>
-    <img
-      th:src="${image}"
-      alt=""
-    />
+    <img th:src="${image}" alt="" />
     <p th:text="${image}"></p>
     <p th:text="${message}">a</p>
     <p th:each="element,data : ${names}">
-      [[${data.index}]]
-      <a th:href="@{/detail(pokemonName=${element})}" target="_blank" rel="noopener noreferrer">[[${element}]]</a>
+      [[${data.count}]]
+      <a
+        th:href="@{/detail(pokemonName=${element})}"
+        target="_blank"
+        rel="noopener noreferrer"
+        >[[${element}]]</a
+      >
     </p>
   </body>
 </html>
