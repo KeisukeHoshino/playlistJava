@@ -15,5 +15,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.jdt.ls.java.home": "/usr/lib/jvm/msopenjdk-current"
 }

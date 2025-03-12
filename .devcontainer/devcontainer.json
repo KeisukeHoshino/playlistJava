@@ -1,0 +1,12 @@
+{
+    "name": "Java 17 Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/java:17",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vmware.vscode-boot-dev-pack"
+            ]
+        }
+    }
+}

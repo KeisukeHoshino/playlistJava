@@ -9,7 +9,8 @@
 		"redhat.java",
 		"esbenp.prettier-vscode",
 		"vmware.vscode-boot-dev-pack",
-		"redhat.vscode-xml"
+		"redhat.vscode-xml",
+		"ms-vscode-remote.vscode-remote-extensionpack"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
