@@ -31,23 +31,9 @@ public class PokemonDomain {
             // 通信リンクを確立
             con.connect();
 
-            StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder stringBuilder;
             // apiからデータを取得
-            try (InputStream stream = con.getInputStream()) {
-
-                String line;
-                // 文字型入力ストリームを作成
-                BufferedReader br = new BufferedReader(new InputStreamReader(stream));
-                // 取得したデータをjson風に変換
-                while ((line = br.readLine()) != null) {
-                    stringBuilder.append(line);
-                    stringBuilder.append(System.lineSeparator());
-                }
-                stream.close();
-
-            } catch (Exception e) {
-                System.err.println("Connection Error");
-            }
+            stringBuilder = conversionJson(con);
             // apiから取得したjsonをjavaオブジェクトに変換
             result = new com.google.gson.Gson().fromJson(stringBuilder.toString().trim(), NamedAPIResourceList.class);
         } catch (MalformedURLException e) {
@@ -76,23 +62,10 @@ public class PokemonDomain {
             // 通信リンクを確立
             con.connect();
 
-            StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder stringBuilder;
             // apiからデータを取得
-            try (InputStream stream = con.getInputStream()) {
+            stringBuilder = conversionJson(con);
 
-                String line;
-                // 文字型入力ストリームを作成
-                BufferedReader br = new BufferedReader(new InputStreamReader(stream));
-                // 取得したデータをjson風に変換
-                while ((line = br.readLine()) != null) {
-                    stringBuilder.append(line);
-                    stringBuilder.append(System.lineSeparator());
-                }
-                stream.close();
-
-            } catch (Exception e) {
-                System.err.println("Connection Error");
-            }
             // apiから取得したjsonをjavaオブジェクトに変換
             result = new com.google.gson.Gson().fromJson(stringBuilder.toString().trim(), Pokemon.class);
         } catch (MalformedURLException e) {
@@ -101,5 +74,30 @@ public class PokemonDomain {
             System.err.println("Connection Error");
         }
         return result;
+    }
+
+    /**
+     * APIから取得したデータをjson風に変換
+     *
+     * @param con HttpURLConnection コネクション
+     * @return json風にした文字列
+     */
+    private static StringBuilder conversionJson(HttpURLConnection con) {
+        StringBuilder stringBuilder = new StringBuilder();
+        try (InputStream stream = con.getInputStream()) {
+
+            String line;
+            // 文字型入力ストリームを作成
+            BufferedReader br = new BufferedReader(new InputStreamReader(stream));
+            // 取得したデータをjson風に変換
+            while ((line = br.readLine()) != null) {
+                stringBuilder.append(line);
+                stringBuilder.append(System.lineSeparator());
+            }
+            stream.close();
+        } catch (Exception e) {
+            System.err.println("Connection Error");
+        }
+        return stringBuilder;
     }
 }

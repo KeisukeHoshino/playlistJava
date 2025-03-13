@@ -41,7 +41,7 @@ public class HelloController {
     public String test(Model model) {
         model.addAttribute("form", new HelloForm());
 
-        ArrayList<String> pokemonNameList = PokemonService.getPokemonList(100, 0);
+        ArrayList<String> pokemonNameList = PokemonService.getPokemonList(10, 0);
 
         // namesにポケモンの名前を格納
         model.addAttribute("names", pokemonNameList);
@@ -53,6 +53,7 @@ public class HelloController {
     public String getMethodName(Model model, @RequestParam("pokemonName") String pokemonName) {
         model.addAttribute("pokemonName", pokemonName);
         HashMap<String, String> map = PokemonService.getPokemonDetail(pokemonName);
+        model.addAttribute("image", map.get("image"));
         model.addAttribute("map", map);
         return "detail";
     }

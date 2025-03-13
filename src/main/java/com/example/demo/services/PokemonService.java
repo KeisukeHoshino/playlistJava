@@ -46,6 +46,8 @@ public class PokemonService {
         if (pokemonDetail.getTypes().size() == 2) {
             map.put("secondType", pokemonDetail.getTypes().get(1).getType().getName());
         }
+        // ポケモンの正面画像を設定する
+        map.put("image", pokemonDetail.getSprites().getFrontDefault());
 
         return map;
     }
