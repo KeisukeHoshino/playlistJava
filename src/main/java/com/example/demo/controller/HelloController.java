@@ -32,7 +32,7 @@ public class HelloController {
         // 受け取ったフォームデータをビューに返すためにModelに設定
         model.addAttribute("form", form); // フォームオブジェクトを再度ビューに渡す
         // 入力された名前を利用してメッセージを生成し、Modelに設定
-        model.addAttribute("message", "こんにちは aa" + form.getName() + "!");
+        model.addAttribute("message", "こんにちは" + form.getName() + "!");
         // "hello.html"テンプレートを再度レンダリング
         return "hello";
     }
