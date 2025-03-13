@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.skypack.dev/sanitize.css" />
-    <link rel="stylesheet" href="app.css" />
-    <title>test Page</title>
-  </head>
 
-  <body>
-    <h2>ポケモン詳細</h2>
-    <p th:text="${pokemonName}"></p>
-    <ul th:each="entry : ${map}">
-      <li>
-        <p>[[${entry.value}]]</p>
-      </li>
-    </ul>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.skypack.dev/sanitize.css" />
+  <link rel="stylesheet" href="app.css" />
+  <title>test Page</title>
+</head>
+
+<body>
+  <h2>ポケモン詳細</h2>
+  <p>名前</p>
+  <p th:text="${pokemonName}"></p>
+  <p>画像</p>
+  <img th:src="${image}" alt="">
+  <p>タイプ</p>
+  <ul th:each="entry : ${map}">
+    <li>
+      <p>[[${entry.value}]]</p>
+    </li>
+  </ul>
+</body>
+
 </html>

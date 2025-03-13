@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Page</title>
-  </head>
 
-  <body>
-    <h1>フォーム入力</h1>
-    <form action="/send" method="post">
-      <label for="name">名前:</label>
-      <input type="text" id="name" name="name" th:value="${form.name}" />
-      <button type="submit">送信</button>
-    </form>
-    <h2>メッセージ:</h2>
-    <p th:text="${message}"></p>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Page</title>
+</head>
+
+<body>
+  <h1>フォーム入力</h1>
+  <form action="/send" method="post">
+    <label for="name">名前:</label>
+    <input type="text" id="name" name="name" th:value="${form.name}" />
+    <button type="submit">送信</button>
+  </form>
+  <h2>メッセージ:</h2>
+  <p th:text="${message}"></p>
+</body>
+
 </html>
