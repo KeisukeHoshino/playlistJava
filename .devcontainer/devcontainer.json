@@ -1,12 +1,18 @@
 {
-    "name": "Java 17 Dev Container",
-    "image": "mcr.microsoft.com/devcontainers/java:17",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "vscjava.vscode-java-pack",
-                "vmware.vscode-boot-dev-pack"
-            ]
-        }
+  "name": "Java 17 Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-boot-dev-pack",
+        "vscjava.vscode-java-pack",
+        "Oracle.oracle-java",
+        "redhat.java",
+        "esbenp.prettier-vscode",
+        "vmware.vscode-boot-dev-pack",
+        "redhat.vscode-xml"
+      ]
     }
+  }
 }
