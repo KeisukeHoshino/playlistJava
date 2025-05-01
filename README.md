@@ -18,21 +18,21 @@ WebAPIとJavaを使用してチーム開発を経験する
 <br>
 # 【準備手順】
 1. Docker Desktopを起動する
-<br>
+
 2. Visual Studio Codeを起動する
-<br>
+
 3. Visual Studio Codeのターミナルを開く
-<br>
+
 4. GitHubから以下のコマンドでソースコードをクローンする
-```
-git clone https://github.com/KeisukeHoshino/playlistJava.git
-```
-<br>
+
+`git clone https://github.com/KeisukeHoshino/playlistJava.git`
+<br/>
+
 5. 「コンテナーで再度開く」というダイアログを押下するか、左下の「リモートウィンドウを開く」メニューから「コンテナーで再度開く」を押下
 <br>
 6. 実行とデバッグから「F5」を押下するか、「デバッグの開始」を押下する
 <br><br>
-その後は変更してブラウザを更新したらすぐに反映されるようになる
+7. その後は変更してブラウザを更新したらすぐに反映されるようになる
 <br><br>
 
 ### APIの結果を確認するツール
